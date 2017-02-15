@@ -1,5 +1,20 @@
 Is it alive?
-4
-5
+3
+6
+Is it a mammal?
+9
+12
+Is it a mineral?
+15
+18
 Is it a dog?
-Is it a rock?
+
+
+Is it a snake?
+
+
+Is it a diamond?
+
+
+Is it a stick?
+

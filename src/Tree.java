@@ -4,7 +4,7 @@ import java.io.FileNotFoundException;
 
 public class Tree<T extends Comparable> {
 
-  private TreeNode<T> root;
+  public TreeNode<T> root;
 
   public Tree() {
     root = null;
@@ -30,15 +30,45 @@ public class Tree<T extends Comparable> {
 	  }
   }
   
-  public void addNode(T new_question, TreeNode<T> previous_node, boolean distinguishingBoolean) {
-    TreeNode<T> new_node = new TreeNode<T>(new_question);
-    
-    if (distinguishingBoolean == true){
-    	previous_node.addLeftChild(new_node);
-    }
-    else{
-    	previous_node.addRightChild(new_node);
-    }
+  public TreeNode<T> find(T question, TreeNode<T> node){
+	  if(node!=null){
+		  if(node.getValue().equals(question)){
+			  return node;
+		  }
+		  else{
+			  TreeNode<T> foundNode=find(question, node.left_child);
+			  if(foundNode==null){
+				  foundNode=find(question, node.right_child);
+			  }
+			  return foundNode;
+		  }
+		  
+	  }
+	  else{
+		  return null;
+	  }
+	  
+  }
+  
+  public void addNode(T broad_question,T specific_item, TreeNode<T> previous_node, boolean distinguishingBoolean) {
+	    TreeNode<T> new_broad_question = new TreeNode<T>(broad_question);
+	    TreeNode<T> new_specific_question = new TreeNode<T>(specific_item);
+	    
+	    if (distinguishingBoolean == true){
+	    	new_broad_question.addRightChild(previous_node.getLeftChild());
+	    	previous_node.addLeftChild(new_broad_question);
+	    	new_broad_question.addLeftChild(new_specific_question);
+	    	
+	    }
+	    else{
+	    	new_broad_question.addLeftChild(previous_node.getLeftChild());
+	    	previous_node.addLeftChild(new_broad_question);
+	    	new_broad_question.addRightChild(new_specific_question); 
+	    }
+	    
+	    
+	    
+	  }
     
     
   }
@@ -50,4 +80,4 @@ public class Tree<T extends Comparable> {
   
 
   
-}
+

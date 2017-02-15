@@ -1,16 +1,23 @@
 
 
 public class TreeNode<T extends Comparable> {
-
+	public boolean finalQuestion;
     public T value;
     public TreeNode<T> left_child;
     public TreeNode<T> right_child;
+    public TreeNode<T> parent;
 
-    public TreeNode(T _value) {
+    public TreeNode (T _value) {
       value = _value;
       left_child = null;
       right_child = null;
     }
+    
+    public TreeNode<T> getParent(TreeNode<T> child){
+    
+    	return child.parent;
+    }
+    
 
     public void addLeftChild(TreeNode<T> _child) {
       left_child = _child;
