@@ -2,9 +2,9 @@
 
 public class TreeNode<T extends Comparable> {
 
-    private T value;
-    private TreeNode<T> left_child;
-    private TreeNode<T> right_child;
+    public T value;
+    public TreeNode<T> left_child;
+    public TreeNode<T> right_child;
 
     public TreeNode(T _value) {
       value = _value;

@@ -14,6 +14,22 @@ public class Tree<T extends Comparable> {
       return root;
   }
 
+  public void addNodeAbe(T new_question, TreeNode<T> currentNode, boolean left){
+	  if(root==null){
+		  root.value=new_question;
+	  }
+	  if(root!=null){
+		  TreeNode<T> current=root;
+		  if(current.left_child==null)
+		  if(left){
+			 currentNode.left_child.value=new_question;
+		  }
+		  if(!left){
+			  currentNode.right_child.value=new_question;
+		  }
+	  }
+  }
+  
   public void addNode(T new_question, TreeNode<T> previous_node, boolean distinguishingBoolean) {
     TreeNode<T> new_node = new TreeNode<T>(new_question);
     
@@ -33,16 +49,5 @@ public class Tree<T extends Comparable> {
 
   
 
-  public static void main(String[] args) throws FileNotFoundException {
-
-      Tree<String> myTree = new Tree();
-
-      Scanner myScanner = new Scanner(new File("words.txt"));
-      while (myScanner.hasNext()) {
-          myTree.addNode(myScanner.next());
-      }
-
-      //myTree.inorderTraversal();
-
-  }
+  
 }

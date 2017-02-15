@@ -1,3 +1,5 @@
 Is it alive?
+4
+5
 Is it a dog?
-Is it a cat?
+Is it a rock?

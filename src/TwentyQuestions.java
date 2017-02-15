@@ -3,6 +3,7 @@ import java.io.*;
 public class TwentyQuestions {
 	Queue<String> qandAQueue;
 	ArrayList<String>questionsList=new ArrayList<String>();
+	Tree<String> questionTree=new Tree<String>();
 
 	public void printQueue(){
 		if(qandAQueue.getSize()>0){
@@ -23,6 +24,12 @@ public class TwentyQuestions {
 			}
 			System.out.println(questionsList);
 		}catch(Exception e){System.out.println(e);}
+	}
+	
+	public void convertListToTree(){
+		for(int i=0; i<questionsList.size(); i++){
+		
+		}
 	}
 	
 
