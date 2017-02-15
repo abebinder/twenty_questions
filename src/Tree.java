@@ -14,15 +14,22 @@ public class Tree<T extends Comparable> {
       return root;
   }
 
-  public void addNode(T new_question, TreeNode<T> previous_node, boolean distinguishingBoolean) {
-    TreeNode<T> new_node = new TreeNode<T>(new_question);
+  public void addNode(T broad_question,T specific_item, TreeNode<T> previous_node, boolean distinguishingBoolean) {
+    TreeNode<T> new_broad_question = new TreeNode<T>(broad_question);
+    TreeNode<T> new_specific_question = new TreeNode<T>(specific_item);
     
     if (distinguishingBoolean == true){
-    	previous_node.addLeftChild(new_node);
+    	new_broad_question.addRightChild(previous_node.getLeftChild());
+    	previous_node.addLeftChild(new_broad_question);
+    	new_broad_question.addLeftChild(new_specific_question);
+    	
     }
     else{
-    	previous_node.addRightChild(new_node);
+    	new_broad_question.addLeftChild(previous_node.getLeftChild());
+    	previous_node.addLeftChild(new_broad_question);
+    	new_broad_question.addRightChild(new_specific_question); 
     }
+    
     
     
   }
