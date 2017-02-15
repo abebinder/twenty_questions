@@ -7,13 +7,31 @@ Is it a mammal?
 Is it a mineral?
 15
 18
-Is it a dog?
-
-
+whiskers?
+21
+24
 Is it a snake?
 
 
 Is it a diamond?
+
+
+is it made out of wood?
+36
+33
+is it a cat
+
+
+aquatic?
+27
+30
+is it a whale
+
+
+Is it a dog?
+
+
+is it a rock
 
 
 Is it a stick?
